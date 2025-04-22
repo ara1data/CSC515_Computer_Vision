@@ -2,12 +2,12 @@
 # Option 2: Installing OpenCV
 
 # Alexander Reichart-Anderson
-# Colorado State University Global
-# CSC515: 
+# MS in AI and ML, Colorado State University Global
+# CSC515-1: Foundations of Computer Vision
 # April 20, 2025
 
 # ------------------------------
-# To Install OpenCV: pip install opencv-python
+# To Install OpenCV: pip3 install opencv-python
 # ------------------------------
 
 # Requirement 0: Import Appropriate Packages
