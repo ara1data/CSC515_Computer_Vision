@@ -4,6 +4,7 @@
 # Alexander Reichart-Anderson
 # MS in AI and ML, Colorado State University Global
 # CSC515-1: Foundations of Computer Vision
+# Dr. Jack Li
 # April 20, 2025
 
 # ------------------------------
