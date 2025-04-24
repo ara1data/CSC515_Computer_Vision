@@ -30,7 +30,7 @@ else:
     cv2.destroyAllWindows()
 
 # Requirement 3: Write Python code to write a copy of the image to any directory on your desktop.
-    output_dir = './image_output'
+    output_dir = './Module1/image_output'
     os.makedirs(output_dir, exist_ok=True)
     output_path = os.path.join(output_dir, 'numbers_image_copy.jpg')
     cv2.imwrite(output_path, image)
