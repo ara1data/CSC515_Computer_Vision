@@ -9,6 +9,7 @@
 
 # ------------------------------
 # To Install OpenCV: pip3 install opencv-python
+# Install matplotlib: pip install matplotlib
 # Install required system library for OpenCV: install -qq libgl1
 # ------------------------------
 
@@ -17,8 +18,11 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Load image and convert to RGB
-image = cv2.imread('image.jpg')
+# Load image from root folder
+image_path = 'Module4/Mod4CT1.jpg'
+image = cv2.imread(image_path)
+
+# Convert to RGB
 image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 # Kernel sizes and sigma calculation
