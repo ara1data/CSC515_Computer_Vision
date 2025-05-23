@@ -20,7 +20,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the latent fingerprint image and convert to grayscale
-image_path = 'Module5/Mod5Fingerprint.jpeg'
+image_path = 'Module5/Module5CTA_fingerprint.jpg'
 image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 
 # Define the structuring element (kernel) of size 3x3
