@@ -1,0 +1,8 @@
+Option #1: Adaptive Thresholding Scheme for Simple Objects
+If an image has been preprocessed properly to remove noise, a key step that is generally used when interpreting that image is segmentation. Image segmentation is a process in which regions or features sharing similar characteristics are identified and grouped together.
+
+The thresholds in the algorithms discussed in this module were chosen by the designer. In order to make segmentation stronger to variations in the scene, the algorithm should be able to select an appropriate threshold automatically using the amount of intensity present in the image. The knowledge about the gray values of objects should not be hard-coded into an algorithm. The algorithm should use knowledge about the relative characteristics of gray values to select the appropriate threshold.  A thresholding scheme that uses such knowledge and selects a proper threshold value for each image without human intervention is called an adaptive thresholding scheme.
+
+Find on the internet (or use a camera to take) three different types of images: an indoor scene, outdoor scenery, and a close-up scene of a single object. Implement an adaptive thresholding scheme to segment the images as best as you can.
+
+Your submission should be one executable Python script and one summary of 2-3 pages in length that conforms to CSU Global Writing Center. Include at least two scholarly references in addition to the course textbook. The CSU Global Library is a good place to find these references. The Writing Center and Library can be accessed by clicking on the tabs in the course navigation panel.
