@@ -22,16 +22,18 @@ import numpy as np
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')
 
-
+# Requirement 2: Face and Eye Detection with Anonymization
 def detect_and_blur_eyes(image_path):
+    
+    # 2A: Load Images
     img = cv2.imread(image_path)
     if img is None:
         return None, 'Image not found or unable to load'
     
-    # Convert to grayscale for detection
+    # 2B: Convert to grayscale for detection
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     
-    # Detect faces with optimized parameters
+    # 2C: Detect faces with optimized parameters
     faces = face_cascade.detectMultiScale(
         gray, 
         scaleFactor=1.1, 
@@ -39,22 +41,23 @@ def detect_and_blur_eyes(image_path):
         minSize=(30, 30)
     )
     
+    # 2D: For Loop for Drawing and Blurring
     for (x, y, w, h) in faces:
-        # Draw red bounding box around face
+        # 2E: Draw red bounding box around face
         cv2.rectangle(img, (x, y), (x+w, y+h), (0, 0, 255), 2)
         
-        # Process face region
+        # 2F: Process face region
         face_roi_gray = gray[y:y+h, x:x+w]
         face_roi_color = img[y:y+h, x:x+w]
         
-        # Detect eyes with alignment consideration
+        # 2G: Detect eyes with alignment consideration
         eyes = eye_cascade.detectMultiScale(
             face_roi_gray,
             scaleFactor=1.05,
             minNeighbors=3
         )
         
-        # Blur detected eyes
+        # 2H: Blur detected eyes
         for (ex, ey, ew, eh) in eyes:
             eye_region = face_roi_color[ey:ey+eh, ex:ex+ew]
             blurred_eye = cv2.GaussianBlur(eye_region, (99, 99), 30)
@@ -62,8 +65,10 @@ def detect_and_blur_eyes(image_path):
     
     return img, None
 
-# Function Call for three images
+# Requirement 3: Function Call for three images
+# 3A: Load Images
 images = ['Module8/images_original/group_photo.jpg', 'Module8/images_original/blurry_group.jpg', 'Module8/images_original/person_with_dog.jpg']
+# 3B: Function Calling
 for idx, img_path in enumerate(images):
     result, error = detect_and_blur_eyes(img_path)
     if error is None:
